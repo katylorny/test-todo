@@ -1,7 +1,7 @@
 <template>
   <div class="header">
 <!--    <img :src="logoImg" alt="Логотип" width="70">-->
-    <button type="button" class="new-note-button">
+    <button @click="onClick" type="button" class="new-note-button">
       <img :src="addImg" alt="Создать новую заметку">
     </button>
   </div>
@@ -18,6 +18,11 @@ export default {
     return {
       addImg,
       logoImg,
+    }
+  },
+  methods: {
+    onClick() {
+      this.$router.push('/note')
     }
   }
 }

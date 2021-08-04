@@ -3,14 +3,14 @@
     <Header/>
     <div class="notes">
       <note v-for="(note, i) in notes" :key="i" :background-img="note.img" :title="note.title"
-            :todo-items="note.todos"/>
+            :todo-items="note.todos" :id="note.id"/>
     </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Note from "@/views/Note";
+import Note from "@/components/Note";
 import sunsetImg from "@/assets/sunset.jpg";
 import funchosaImg from "@/assets/funchoza.jpg";
 import kittyImg from "@/assets/kitty.png";
@@ -34,6 +34,7 @@ export default {
       notes: [
         {
           title: 'Рецепт фунчозы',
+          id: 1,
           todos: [
             {
               text: "фунчоза",
@@ -56,6 +57,7 @@ export default {
         },
         {
           title: 'Планы на сегодня',
+          id: 2,
           img: kittyImg,
           todos: [
             {
@@ -79,6 +81,7 @@ export default {
         {
           title: 'Подарки на нг для моих сладких',
           img: newYearImg,
+          id: 3,
           todos: [
             {
               text: "мама",
@@ -96,14 +99,17 @@ export default {
         },
         {
           title: 'Заметка 4',
+          id: 4,
           todos: []
         },
         {
           title: 'Заметка 5',
+          id: 5,
           todos: []
         },
         {
           title: 'Заметка 6',
+          id: 6,
           todos: []
         },
       ]

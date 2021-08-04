@@ -2,7 +2,7 @@
   <div class="note">
     <div class="header" :style='{ backgroundImage: `url("${backgroundImg}")` }'>
       <div class="buttons">
-        <button class="options-button">
+        <button @click="onEditButtonClick" class="options-button">
           <img :src="editButtonImg2" alt="Редактировать">
         </button>
         <button class="options-button">
@@ -46,6 +46,9 @@ export default {
     },
     todoItems: {
       type: Array
+    },
+    id: {
+      type: Number
     }
   },
   data() {
@@ -55,6 +58,11 @@ export default {
       deleteButtonImg2,
       editButtonImg,
       editButtonImg2
+    }
+  },
+  methods: {
+    onEditButtonClick() {
+      this.$router.push({name: 'Note', params: { id: String(this.id) }})
     }
   }
 }
